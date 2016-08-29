@@ -1,0 +1,8 @@
+{
+  "name": "pharmacognosy",
+  "description": "Pharmacognosy",
+  "image": "heroku/python",
+  "repository": "https://",
+  "keywords": ["pharmacognosy", "tutorials" ],
+  "addons": [ "heroku-postgresql" ]
+}

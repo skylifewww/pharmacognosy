@@ -1,0 +1,154 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load i18n mptt_tags %}
+{% load thumbnail %}
+
+{% block main %}
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('/static/pharmacognosy/images/backgrounds/01.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper">
+    <header id="header" class="hoc clear">
+      <div id="logo"> 
+      
+        <!-- ################################################################################################ -->
+        <h1><a href="/">Pharmacognosy</a></h1>
+        <p>Shostkinsky Medical College</p>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="clear"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          {# <li><a href="/">Home</a></li> #}
+          <li><a href="/articles/">Лекции</a></li>
+          <li><a href="/contact/">Контакты</a></li>
+          {# <li><a class="drop" href="#">Pages</a> #}
+            {# <ul> #}
+              {# <li><a href="pages/gallery.html">Gallery</a></li> #}
+              {# <li><a href="/article/">Full Width</a></li> #}
+              {# <li><a href="pages/sidebar-left.html">Sidebar Left</a></li> #}
+              {# <li><a href="pages/sidebar-right.html">Sidebar Right</a></li> #}
+              {# <li><a href="pages/basic-grid.html">Basic Grid</a></li> #}
+            {# </ul> #}
+          {# </li> #}
+          {# <li><a class="drop" href="#">Dropdown</a> #}
+            {# <ul> #}
+              {# <li><a href="#">Level 2</a></li> #}
+              {# <li><a class="drop" href="#">Level 2 + Drop</a> #}
+                {# <ul> #}
+                  {# <li><a href="#">Level 3</a></li> #}
+                  {# <li><a href="#">Level 3</a></li> #}
+                  {# <li><a href="#">Level 3</a></li> #}
+                {# </ul> #}
+              {# </li> #}
+              {# <li><a href="#">Level 2</a></li> #}
+            {# </ul> #}
+          {# </li> #}
+          
+          {# <li><a href="#">Link Text</a></li> #}
+          {# <li><a href="#">Long Link Text</a></li> #}
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article><em>Курс лекций по предмету</em>
+      <h2 class="heading">Фармакогнозия</h2>
+      <p>Шосткинского медецинского техникума</p>
+      <footer><a class="btn" href="/articles/">Читать лекции</a></footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    
+    <ul class="nospace clear services">
+      <li class="one_half first borderedbox">
+        <div class="inspace-30">
+          <h6 class="heading">Фармакогнозия это:</h6>
+          <p class="nospace">Дословно термин означает:  от греческого «pharmacon» — лекарство, яд;   «gnosis» — знание.</p>
+        </div>
+      </li>
+      <li class="one_quarter">
+      {# <a href="#"> #}
+        <img class="imgMU" src="{% static 'pharmacognosy/images/pharm.png' %}" alt="">
+          {# <figcaption>Placerat</figcaption> #}
+        {# </figure> #}
+        {# </a> #}
+        </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+
+  
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('/static/pharmacognosy/images/backgrounds/02.png');">
+  <article class="hoc container clear center"> 
+ 
+    <!-- ################################################################################################ -->
+    <h3 class="heading">Все есть яд, ничто не лишено ядовитости.</h3>
+    <p class="btmspace-50">И все есть лекарство. Одна только доза делает вещество ядом и лекарством</p>
+    <footer><a class="btn medium" href="/articles/">Читать лекции</a></footer>
+    <!-- ################################################################################################ -->
+  </article>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <section class="hoc container clear">ю
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-80">
+      <h3 class="heading">Imperdiet urna lacus</h3>
+      <p class="nospace">Quis augue nullam urna tincidunt ut eleifend ac bibendum mauris ullamcorper.</p>
+    </div>
+    <ul class="nospace group cta">
+      <li class="one_third first">
+        <article><span>1</span>
+          <h6 class="heading font-x1"><a href="#">Ullamcorper in hac</a></h6>
+          <p>Augue eget nulla vulputate at posuere lacus vestibulum quisque ac orci id neque blandit tincidunt odio&hellip;</p>
+          <footer><a href="#">Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><span>A</span>
+          <h6 class="heading font-x1"><a href="#">Habitasse platea dictumst</a></h6>
+          <p>Rutrum malesuada donec vel ante quam phasellus ultricies nisi condimentum imperdiet volutpat sed&hellip;</p>
+          <footer><a href="#">Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><span><i class="fa fa-leaf"></i></span>
+          <h6 class="heading font-x1"><a href="#">Integer nec augue</a></h6>
+          <p>Tempus aliquam nec leo non massa congue scelerisque quis id urna cras eleifend faucibus diam curabitur&hellip;</p>
+          <footer><a href="#">Details &raquo;</a></footer>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </section>
+</div>
+{% endblock %}
