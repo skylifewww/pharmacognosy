@@ -52,7 +52,7 @@ mptt.register(Category, order_insertion_by=['name'])
 
 
 class Author(MPTTModel):
-    slug = models.CharField(max_length=250, blank=True, verbose_name="Урл")
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u"Урл")
     name = models.CharField(max_length=200, verbose_name=u"Автор статьи", blank=True, default="", unique=True)
     parent = TreeForeignKey('self', related_name="children", blank=True, null=True, db_index=True, verbose_name="Родительский класс")
 
@@ -130,13 +130,13 @@ class Works(models.Model):
 
 class Article(models.Model):
     article_title = models.CharField(max_length=250, verbose_name=u"Название статьи")
-    article_date = models.DateTimeField(verbose_name="Дата публикации статьи")
+    article_date = models.DateTimeField(verbose_name=u"Дата публикации статьи")
     # article_number = models.IntegerField(default=0, verbose_name="Номер статьи", blank=True, null=True)
     # article_likes = models.IntegerField(default=0, verbose_name="Лайки")
     article_tag = models.ManyToManyField(Tag, related_name=u"tags", related_query_name="tags", verbose_name=u"Теги")
     article_works = models.ManyToManyField(Works, related_name=u"works", related_query_name="works", verbose_name=u"Примеры работ", blank=True, default="")
     article_category = TreeForeignKey(Category, related_name="articles", verbose_name=u"Категории", default="", blank=True)
-    article_author = TreeForeignKey(Author, related_name="autor", max_length=200, verbose_name="Автор статьи", blank=True, default="")
+    article_author = TreeForeignKey(Author, related_name="autor", max_length=200, verbose_name=u"Автор статьи", blank=True, default="")
     short_text = RichTextUploadingField(blank=True, verbose_name="Короткое описание RU")
     # image = ThumbnailerImageField(upload_to=make_upload_path, blank=True, verbose_name="Шапка статьи")
     slug = models.CharField(max_length=250, blank=True, verbose_name="Урл")
