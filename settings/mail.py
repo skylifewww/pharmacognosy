@@ -2,6 +2,7 @@ ADMINS = (
     ('Admin', 'admin@pharmacognosy.com'),
 )
 
+# DEFAULT_FROM_EMAIL = 'robot@tvoy_style.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'skylifewww@gmail.com'
 EMAIL_USE_TLS = True
