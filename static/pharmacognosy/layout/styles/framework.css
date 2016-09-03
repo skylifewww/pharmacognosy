@@ -56,6 +56,77 @@ img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; l
 
 .imgGroundArt{width:auto; height:25px; position:relative; text-align:center;}
 
+.article .content .txt .column-one{
+  margin-top:0px;
+  width:50%;
+  float:left;
+  margin-bottom:25px;
+  height:60px;
+}
+
+.circle-one{
+  margin-top:0px;
+  width:50%;
+  float:left;
+  margin-bottom:25px;
+  height:60px;
+  height: 60px;
+  position:relative;
+  margin:0 auto;
+  border:2px solid #f0f0f0;
+  background: url(/images/icons/left.png) white no-repeat center center;
+  -moz-border-radius:60px;
+  -webkit-border-radius:60px;
+  border-radius: 60px;
+  width: 60px;
+  cursor:pointer;
+    -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.circle-one:hover{
+  border:2px solid #ada074;
+
+}
+
+.article .content .txt .column-two{
+  margin-top:0px;
+  width:50%;
+  float:right;
+  margin-bottom:25px;
+  height:60px;
+}
+
+.circle-two{
+  margin-top:0px;
+  width:50%;
+  float:right;
+  margin-bottom:25px;
+  height:60px;
+  height: 60px;
+  position:relative;
+  margin:0 auto;
+  border:2px solid #f0f0f0;
+  background: url(/images/icons/right.png) white no-repeat center center;
+  -moz-border-radius:60px;
+  -webkit-border-radius:60px;
+  border-radius: 60px;
+  width: 60px;
+    cursor:pointer;
+    -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.circle-two:hover{
+  border:2px solid #ada074;
+}
+
 /* Fonts
 --------------------------------------------------------------------------------------------------------------- */
 body, input, textarea, select{font-family:Verdana, Geneva, sans-serif;}

@@ -37,6 +37,8 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
+<div class="clear"></div>  
+
     <div class="content three_quarter first"> 
 
 <a href="http://www.facebook.com/sharer/sharer.php?u=http://pharmacognosy.herokuapp.com{{ request.get_full_path|urlencode }}" target="_blank" title="Facebook"><img class="imgSocialSmall" src="{% static 'pharmacognosy/images/icons/facebook_butt.png' %}" width="35px" height="35px"></a>
@@ -48,6 +50,28 @@
 <p></p>
 <h6> </h6>
 
+<div class="column-one">
+
+           {% if article_number > 1 %}
+        <a href="/articles/article/page/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one" style="background-image:url('/static/pharmacognosy/images/icons/left.png');"></div></a>
+            {% else %}
+         <h10></h10>
+             {% endif %}
+    
+</div>
+
+
+<div class="column-two">
+
+          {% if article_number < len_dict %}
+      <a href="/articles/article/page/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two" style="background-image:url('/static/pharmacognosy/images/icons/right.png');"></div></a>
+            {% else %}
+       <h10></h10>
+             {% endif %}
+    
+</div>      
+ <div class="clear"></div>    
+
       <!-- ################################################################################################ -->
 <h8>Курс лекцій: <a href="/articles/category/get/{{ article.article_category.id }}/">{{ article.article_category }}</a></h8>
 
@@ -58,7 +82,7 @@
 
 
       <h1>{{ article.article_title }}</h1>
-      <img class="imgr borderedbox inspace-5" src="" alt="">
+      
       <p>{{ article.short_text|safe }}</p>
       <img class="imgl borderedbox inspace-5" src="{{ article.slug }}" alt="">
       <div class="clear"></div>  
@@ -118,6 +142,31 @@
 <p></p>
 <h6> </h6>
 
+<p></p>
+<h6> </h6>
+
+<div class="column-one">
+
+           {% if article_number > 1 %}
+        <a href="/articles/article/page/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one" style="background-image:url('/static/pharmacognosy/images/icons/left.png');"></div></a>
+            {% else %}
+         <h10></h10>
+             {% endif %}
+    
+</div>
+
+
+<div class="column-two">
+
+          {% if article_number < len_dict %}
+      <a href="/articles/article/page/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two" style="background-image:url('/static/pharmacognosy/images/icons/right.png');"></div></a>
+            {% else %}
+       <h10></h10>
+             {% endif %}
+    
+</div>      
+ <div class="clear"></div>    
+
       <div id="comments">
 
         <h2>Комментарії:</h2>
@@ -147,6 +196,31 @@ var disqus_config = function () {
 
 <p></p>
 <h6> </h6>
+
+<p></p>
+<h6> </h6>
+
+<div class="column-one">
+
+           {% if article_number > 1 %}
+        <a href="/articles/article/page/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one" style="background-image:url('/static/pharmacognosy/images/icons/left.png');"></div></a>
+            {% else %}
+         <h10></h10>
+             {% endif %}
+    
+</div>
+
+
+<div class="column-two">
+
+          {% if article_number < len_dict %}
+      <a href="/articles/article/page/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two" style="background-image:url('/static/pharmacognosy/images/icons/right.png');"></div></a>
+            {% else %}
+       <h10></h10>
+             {% endif %}
+    
+</div>      
+ <div class="clear"></div>    
 
 <a href="http://www.facebook.com/sharer/sharer.php?u=http://pharmacognosy.herokuapp.com{{ request.get_full_path|urlencode }}" target="_blank" title="Facebook"><img class="imgSocialSmall" src="{% static 'pharmacognosy/images/icons/facebook_butt.png' %}" width="35px" height="35px"></a>
 
