@@ -74,7 +74,7 @@ img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; l
   position:relative;
   margin:0 auto;
   border:2px solid #f0f0f0;
-  background: url(../images/icons/left.png) white no-repeat center center;
+  background: url(../images/left.png) white no-repeat center center;
   -moz-border-radius:60px;
   -webkit-border-radius:60px;
   border-radius: 60px;
@@ -110,7 +110,7 @@ img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; l
   position:relative;
   margin:0 auto;
   border:2px solid #f0f0f0;
-  background: url(static/pharmacognosy/images/icons/right.png) white no-repeat center center;
+  background: url(../images/right.png) white no-repeat center center;
   -moz-border-radius:60px;
   -webkit-border-radius:60px;
   border-radius: 60px;
