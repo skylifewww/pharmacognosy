@@ -157,7 +157,7 @@ class Article(models.Model):
         db_table = 'article'
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
-        ordering = ['-article_date']
+        ordering = ['article_date']
 
     # def pic(self):
     #     if self.image:

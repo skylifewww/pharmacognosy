@@ -34,32 +34,32 @@ def return_path_f(request):
 
 #     return render_to_response("callactions.html", args)   
 
-def video_only(request):
+# def video_only(request):
 
-    return_path_f(request)
+#     return_path_f(request)
 
-    args = {}
-    args['tags'] = Tag.objects.all()
-    args['articles'] = Article.objects.filter(video_only=1)
-    # args['username'] = auth.get_user(request).username     
-    args["categories"] = Category.objects.all()  
-    args["authors"] = Author.objects.all()     
+#     args = {}
+#     args['tags'] = Tag.objects.all()
+#     args['articles'] = Article.objects.filter(video_only=1)
+#     # args['username'] = auth.get_user(request).username     
+#     args["categories"] = Category.objects.all()  
+#     args["authors"] = Author.objects.all()     
 
-    return render_to_response("articles.html", args)
+#     return render_to_response("articles.html", args)
 
 
-def written_only(request):
+# def written_only(request):
 
-    return_path_f(request)
+#     return_path_f(request)
 
-    args = {}
-    args['tags'] = Tag.objects.all()
-    args['articles'] = Article.objects.filter(written_only=1)
-    # args['username'] = auth.get_user(request).username     
-    args["categories"] = Category.objects.all()  
-    args["authors"] = Author.objects.all()     
+#     args = {}
+#     args['tags'] = Tag.objects.all()
+#     args['articles'] = Article.objects.filter(written_only=1)
+#     # args['username'] = auth.get_user(request).username     
+#     args["categories"] = Category.objects.all()  
+#     args["authors"] = Author.objects.all()     
 
-    return render_to_response("articles.html", args)
+#     return render_to_response("articles.html", args)
 
 
 def articles(request):
