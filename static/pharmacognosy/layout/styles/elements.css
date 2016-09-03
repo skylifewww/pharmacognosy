@@ -36,8 +36,8 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 .list.block li > ul, .list.block li > ol{padding:0 0 0 10px; list-style:none; border-left:1px solid #CCCCCC;}
 
 .list.tick li, .list.arrow li{padding-left:22px; background:no-repeat 0 2px;}
-.list.tick li{background-image:url("images/icons/gemicon/tick-16x16.png");}
-.list.arrow li{background-image:url("images/icons/gemicon/arrow-16x16.png");}
+/*.list.tick li{background-image:url("images/icons/gemicon/tick-16x16.png");}*/
+/*.list.arrow li{background-image:url("images/icons/gemicon/arrow-16x16.png");}*/
 
 .list.underline li{margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid #E5E4E3;}
 .list.underline li:last-child{margin-bottom:0;}
