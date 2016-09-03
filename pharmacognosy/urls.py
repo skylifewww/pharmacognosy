@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^$', main),
     url(r'^articles/', include("article.urls")),
     url(r'contact/$',contact),
+    url(r'slider/$',slider),
 
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

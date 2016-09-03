@@ -40,11 +40,9 @@
   <div class="content three_quarter first"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
+
+
     {% for article in articles %}
-
-
-
-
 
       <!-- ################################################################################################ -->
 <h8>Курс лекцій: <a href="/articles/category/get/{{ article.article_category.id }}/">{{ article.article_category }}</a></h8>
@@ -55,27 +53,21 @@
 <p></p>
 
 
-      {# <h1>{{ article.article_title }}</h1> #}
-      <h1><a href="/articles/article/get/{{ article.article_category.id }}/{{ article.id }}/">{{ article.article_title }}</a></h1>
+      <h1><a href="/articles/article/get/{{ article.article_category.id }}/{{ article.id }}/" class="articleTitle">{{ article.article_title }}</a></h1>
      
       <p>{{ article.short_text|safe }}</p>
       <div class="clear"></div>  
-      <p></p>
-      <h6></h6>
-       <p></p>
-      <h6></h6>
-<div class="clear"></div>  
-   <p></p>
+      
+      {# <h6></h6> #}
+      {# <img class="imgGroundArt" src="{% static 'pharmacognosy/images/camomile.png' %}" alt=""> #}
+      
       <h6></h6>
 <div class="clear"></div>  
-
-  
-
+   
+      <h6></h6>
+<div class="clear"></div>  
+      
      {% endfor %}
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    {# <div class="clear"></div> #}
-  {# </main> #}
 
   
 {# </div> #}
@@ -94,34 +86,36 @@
     <!-- ################################################################################################ -->
     <div class="sidebar one_quarter"> 
       <!-- ################################################################################################ -->
+      
+      <div class="sdb_holder">
       <h6>Лекції:</h6>
       <nav class="sdb_holder">
        {% recursetree categories %}
         <ul>
 
         {% if node == current_category %}
-          <li><a href="/articles/category/get/{{ node.id }}/"   title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
+          <li class="articleTitle"><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
           {% else %}
-          <li><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
+          <li><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a>
            {% endif %}
 
             {% if node.is_root_node %}
                 {% ifequal node.id root_category_id %}
                     {% if not node.is_leaf_node %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% endif %}
                 {% endifequal %}
             {% else %}
                 {% if not node.is_leaf_node %}
                     {% if current_category.id == node.id %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% elif node.level < current_category.level %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% endif %}
                 {% endif %}
@@ -139,9 +133,9 @@
          <ul> 
 {% for tag in tags %}
 {% if tag == current_tag %}
-<pct><h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10></pct>
+<h10><a href="/articles/tag/get/{{ tag.id }}/" class="articleTitle">{{ tag }}</a></h10>
 {% else %}
-<pt><h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10></pt>
+<h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10>
  {% endif %}
  {# {% if not forloop.last %},{% endif %} #}
  {% endfor %}  
@@ -156,16 +150,16 @@
         {% if node == current_author %}
 
           {% if node.slug %}
-          <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a>
+          <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}" class="articleTitle">{{ node }}</a>
           <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius-120" src="{{ node.slug }}" height="140px" width="140px" alt="" class="roundpca"></a></h8>
-           <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}">Задати запитання автору</a></p>
+           <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}" class="authorQs">Задати запитання автору</a></p>
          <p></p>
          <h6> </h6>
           {% else %}
 
-          <pca><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pca>
-          <pca><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius: 120px" src="{% static 'pharmacognosy/images/avatar.png' %}"  height="140px"  width="140px" alt="" class="roundpca"></a></h8></pca>
-         <p><pcaq><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}">Задати запитання автору</a></pcaq></p>
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}" class="articleTitle">{{ node }}</a></h8>
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius: 120px" src="{% static 'pharmacognosy/images/avatar.png' %}"  height="140px"  width="140px" alt="" class="roundpca"></a></h8>
+         <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}" class="authorQs">Задати запитання автору</a></p>
          <p></p>
          <h6> </h6>
            {% endif %}
@@ -174,13 +168,13 @@
 
         {% if node.slug %}
 
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pa>
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{{ node.slug }}" height="40px" width="40px" alt="" class="roundpa"></a></h8></pa>       
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8>
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{{ node.slug }}" height="40px" width="40px" alt="" class="roundpa"></a></h8>      
           <p></p>
          <h6> </h6>
           {% else %}
-          <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pa>
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{% static 'pharmacognosy/images/avatar.png' %}" height="40px" width="40px" alt="" class="roundpa"></a></h8></pa> 
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8>
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{% static 'pharmacognosy/images/avatar.png' %}" height="40px" width="40px" alt="" class="roundpa"></a></h8> 
         <p></p>
          <h6> </h6>
 

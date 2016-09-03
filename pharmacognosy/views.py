@@ -21,6 +21,12 @@ def main(request):
     return_path_f(request)
 
     return render_to_response("main.html")
+
+def slider(request):
+
+    return_path_f(request)
+
+    return render_to_response("slider.html")    
  
  
 def contact(request):

@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load i18n mptt_tags %}
+{% load thumbnail %}
+
+{% block slider %}
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('/static/pharmacognosy/images/backgrounds/01.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper">
+    <header id="headerArticle" class="hoc clear">
+      {# <div id="logo">  #}
+        <!-- ################################################################################################ -->
+        {# <h1><a href="../index.html">Penyler</a></h1> #}
+        {# <p>risus luctus eget</p> #}
+        <!-- ################################################################################################ -->
+      {# </div> #}
+      <nav id="mainav" class="clear"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+           <li><a href="/">Home</a></li>
+          <li><a href="/articles/">Лекции</a></li>
+          <li><a href="/contact/">Контакты</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+
+<!-- Slider -->
+<link href="{% static 'pharmacognosy/layout/scripts/responsiveslides.css' %}" rel="stylesheet" type="text/css" media="all">
+
+
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <!-- ################################################################################################ -->
+  <div class="rslides_container clear">
+    <ul class="rslides clear" id="rslides">
+      <li><img src="{% static 'pharmacognosy/images/slider/01.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/02.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/03.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/04.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/05.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/06.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/07.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/08.png' %}" alt=""></li>
+    </ul>
+  </div>
+  <!-- ################################################################################################ -->
+  <div class="clear"></div>
+</div>
+<!-- Scripts -->
+<script src="http://code.jquery.com/jquery-latest.min.js' %}"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js' %}"></script>
+<script>window.jQuery || document.write('<script src="{% static 'pharmacognosy/layout/scripts/jquery-latest.min.js' %}"><\/script>\
+<script src="{% static 'pharmacognosy/layout/scripts/jquery-ui.min.js' %}"><\/script>')</script>
+<script>jQuery(document).ready(function($){ $('img').removeAttr('width height'); });</script>
+<script src="{% static 'pharmacognosy/layout/scripts/responsiveslides.min.js' %}"></script>
+<script src="{% static 'pharmacognosy/layout/scripts/jquery-mobilemenu.min.js' %}"></script>
+<script src="{% static 'pharmacognosy/layout/scripts/custom.js' %}"></script>
+
+{% endblock %}

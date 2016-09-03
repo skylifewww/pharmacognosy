@@ -185,28 +185,28 @@ var disqus_config = function () {
         <ul>
 
         {% if node == current_category %}
-          <li><a href="/articles/category/get/{{ node.id }}/"   title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
+          <li class="articleTitle"><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
           {% else %}
-          <li><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a><li>
+          <li><a href="/articles/category/get/{{ node.id }}/" title="{% blocktrans with project=node %}Показати усі лекції з {{ node }}{% endblocktrans %}">{{ node }}</a>
            {% endif %}
 
             {% if node.is_root_node %}
                 {% ifequal node.id root_category_id %}
                     {% if not node.is_leaf_node %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% endif %}
                 {% endifequal %}
             {% else %}
                 {% if not node.is_leaf_node %}
                     {% if current_category.id == node.id %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% elif node.level < current_category.level %}
-                        <ul class="child">
-                            <h10>{{ children }}</h10>
+                        <ul>
+                            <li>{{ children }}<li>
                         </ul>
                     {% endif %}
                 {% endif %}
@@ -224,9 +224,9 @@ var disqus_config = function () {
          <ul> 
 {% for tag in tags %}
 {% if tag == current_tag %}
-<pct><h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10></pct>
+<h10><a href="/articles/tag/get/{{ tag.id }}/" class="articleTitle">{{ tag }}</a></h10>
 {% else %}
-<pt><h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10></pt>
+<h10><a href="/articles/tag/get/{{ tag.id }}/">{{ tag }}</a></h10>
  {% endif %}
  {# {% if not forloop.last %},{% endif %} #}
  {% endfor %}  
@@ -241,16 +241,16 @@ var disqus_config = function () {
         {% if node == current_author %}
 
           {% if node.slug %}
-          <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a>
+          <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}" class="articleTitle">{{ node }}</a>
           <a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius-120" src="{{ node.slug }}" height="140px" width="140px" alt="" class="roundpca"></a></h8>
-           <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}">Задати запитання автору</a></p>
+           <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}" class="authorQs">Задати запитання автору</a></p>
          <p></p>
          <h6> </h6>
           {% else %}
 
-          <pca><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pca>
-          <pca><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius: 120px" src="{% static 'pharmacognosy/images/avatar.png' %}"  height="140px"  width="140px" alt="" class="roundpca"></a></h8></pca>
-         <p><pcaq><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}">Задати запитання автору</a></pcaq></p>
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}" class="articleTitle">{{ node }}</a></h8>
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorBig border-radius: 120px" src="{% static 'pharmacognosy/images/avatar.png' %}"  height="140px"  width="140px" alt="" class="roundpca"></a></h8>
+         <p><a  href="/contact/" title="{% blocktrans with project=node %}Задать вопрос {{ node }}{% endblocktrans %}" class="authorQs">Задати запитання автору</a></p>
          <p></p>
          <h6> </h6>
            {% endif %}
@@ -259,13 +259,13 @@ var disqus_config = function () {
 
         {% if node.slug %}
 
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pa>
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{{ node.slug }}" height="40px" width="40px" alt="" class="roundpa"></a></h8></pa>       
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8>
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{{ node.slug }}" height="40px" width="40px" alt="" class="roundpa"></a></h8>      
           <p></p>
          <h6> </h6>
           {% else %}
-          <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8></pa>
-        <pa><h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{% static 'pharmacognosy/images/avatar.png' %}" height="40px" width="40px" alt="" class="roundpa"></a></h8></pa> 
+          <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}">{{ node }}</a></h8>
+        <h8><a  href="/articles/author/get/{{ node.id }}/" title="{% blocktrans with project=node %}Show all entries in {{ node }}{% endblocktrans %}"><img class="imgAutorSmall border-radius: 30px" src="{% static 'pharmacognosy/images/avatar.png' %}" height="40px" width="40px" alt="" class="roundpa"></a></h8> 
         <p></p>
          <h6> </h6>
 
