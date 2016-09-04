@@ -77,6 +77,10 @@ def articles(request):
 
 
 def article(request, category_id, article_id=1):
+
+    global current_category
+
+    # articles_of_course = {} 
     
     # all_comments = Comments.objects.filter(comments_article_id=article_id)
     current_category = Category.objects.get(id=category_id)
