@@ -80,7 +80,9 @@ def article(request, category_id, article_id=1):
 
     global current_category
 
-    # articles_of_course = {} 
+    global articles_of_course 
+
+    articles_of_course.clear()  
     
     # all_comments = Comments.objects.filter(comments_article_id=article_id)
     current_category = Category.objects.get(id=category_id)
@@ -122,6 +124,8 @@ def article(request, category_id, article_id=1):
 
 def article_left_right(request, art_page_number, left_right):
 
+    global articles_of_course
+
     article_number = 1
     left_right = int(left_right)
 
@@ -158,6 +162,12 @@ def article_left_right(request, art_page_number, left_right):
 
 
 def category(request, category_id=1):
+
+    global articles_of_course 
+
+    articles_of_course.clear() 
+
+    global current_category
     
     current_category = Category.objects.get(id=category_id)
     root_category_id = current_category.get_root().id
@@ -176,6 +186,10 @@ def category(request, category_id=1):
 
 def authors(request, author_id=1):
 
+    global articles_of_course 
+
+    articles_of_course.clear()
+
     current_author = Author.objects.get(id=author_id)
     root_author_id = current_author.get_root().id
     args = {}
@@ -191,6 +205,10 @@ def authors(request, author_id=1):
 
 
 def tags(request, tag_id=1):
+
+    global articles_of_course 
+
+    articles_of_course.clear()
     
     current_tag = Tag.objects.get(id=tag_id)
     args = {}
@@ -203,16 +221,16 @@ def tags(request, tag_id=1):
 
     return render_to_response('articles.html', args, context_instance=RequestContext(request))       
 
-def catalog(request):
+# def catalog(request):
 
-    return_path_f(request)
+#     return_path_f(request)
 
-    args = {}
-    args['works'] = Works.objects.all()
-    # args['username'] = auth.get_user(request).username     
+#     args = {}
+#     args['works'] = Works.objects.all()
+#     # args['username'] = auth.get_user(request).username     
  
 
-    return render_to_response("catalog.html", args)
+#     return render_to_response("catalog.html", args)
 
 
 
