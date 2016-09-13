@@ -60,7 +60,7 @@ def contact(request):
             email = EmailMessage(
                 u"Фармакогнозия",
                 content,
-                "Your website" +'',
+                u"Фармакогнозия" +'',
                 ['skylifewww@gmail.com'],
                 headers = {'Reply-To': contact_email }
             )

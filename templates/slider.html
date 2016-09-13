@@ -5,17 +5,25 @@
 {% load thumbnail %}
 
 {% block slider %}
+
+  <!-- Syntax Highlighter -->
+  {# <link href="{% static 'pharmacognosy/layout/styles/shCore.css' %}" rel="stylesheet" type="text/css" /> #}
+  {# <link href="{% static 'pharmacognosy/layout/styles/shThemeDefault.css' %}" rel="stylesheet" type="text/css" /> #}
+  <!-- Demo CSS -->
+  <link rel="stylesheet" href="{% static 'pharmacognosy/layout/styles/demo.css' %}" type="text/css" media="screen" />
+  <link rel="stylesheet" href="{% static 'pharmacognosy/layout/styles/flexslider.css' %}" type="text/css" media="screen" />
+
+{# <link href="{% static 'pharmacognosy/layout/styles/flexslider.css' %}" rel="stylesheet" type="text/css" media="all"> #}
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('/static/pharmacognosy/images/backgrounds/01.png');"> 
   <!-- ################################################################################################ -->
   <div class="wrapper">
     <header id="headerArticle" class="hoc clear">
-      {# <div id="logo">  #}
+      
         <!-- ################################################################################################ -->
-        {# <h1><a href="../index.html">Penyler</a></h1> #}
-        {# <p>risus luctus eget</p> #}
+       
         <!-- ################################################################################################ -->
-      {# </div> #}
+      
       <nav id="mainav" class="clear"> 
         <!-- ################################################################################################ -->
         <ul class="clear">
@@ -31,39 +39,72 @@
 </div>
 
 <!-- Slider -->
-<link href="{% static 'pharmacognosy/layout/scripts/responsiveslides.css' %}" rel="stylesheet" type="text/css" media="all">
-
-
-<!-- ################################################################################################ -->
-<div class="wrapper row2">
-  
-</div>
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <!-- ################################################################################################ -->
-  <div class="rslides_container clear">
-    <ul class="rslides clear" id="rslides">
+<div id="main" role="main">
+<section class="slider">
+<div class="flexslider">
+  <ul class="slides">
       <li><img src="{% static 'pharmacognosy/images/slider/01.png' %}" alt=""></li>
       <li><img src="{% static 'pharmacognosy/images/slider/02.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/03.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/04.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/05.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/06.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/07.png' %}" alt=""></li>
-      <li><img src="{% static 'pharmacognosy/images/slider/08.png' %}" alt=""></li>
-    </ul>
-  </div>
-  <!-- ################################################################################################ -->
-  <div class="clear"></div>
+      <li><img src="{% static 'pharmacognosy/images/slider/01.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/02.png' %}" alt=""></li>
+      <li><img src="{% static 'pharmacognosy/images/slider/01.png' %}" alt=""></li>
+  </ul>
 </div>
+</section>
+</div>
+</div>
+
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+  <!-- FlexSlider -->
+  <script defer src="{% static 'pharmacognosy/layout/scripts/jquery.flexslider.js' %}"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Syntax Highlighter -->
+  <script type="text/javascript" src="{% static 'pharmacognosy/layout/scripts/shCore.js' %}"></script>
+  <script type="text/javascript" src="{% static 'pharmacognosy/layout/scripts/shBrushXml.js' %}"></script>
+  <script type="text/javascript" src="{% static 'pharmacognosy/layout/scripts/shBrushJScript.js' %}"></script>
+
+  <!-- Optional FlexSlider Additions -->
+  <script src="{% static 'pharmacognosy/layout/scripts/jquery.easing.js' %}"></script>
+  <script src="{% static 'pharmacognosy/layout/scripts/jquery.mousewheel.js' %}"></script>
+  <script defer src="{% static 'pharmacognosy/layout/scripts/demo.js' %}"></script>
+
+
+
+
+
+
+
 <!-- Scripts -->
-<script src="http://code.jquery.com/jquery-latest.min.js' %}"></script>
-<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js' %}"></script>
+<script src="{% static 'pharmacognosy/layout/scripts/jquery-latest.min.js' %}"></script>
+<script src="{% static 'pharmacognosy/layout/scripts/jquery-ui.min.js' %}"></script>
 <script>window.jQuery || document.write('<script src="{% static 'pharmacognosy/layout/scripts/jquery-latest.min.js' %}"><\/script>\
 <script src="{% static 'pharmacognosy/layout/scripts/jquery-ui.min.js' %}"><\/script>')</script>
 <script>jQuery(document).ready(function($){ $('img').removeAttr('width height'); });</script>
-<script src="{% static 'pharmacognosy/layout/scripts/responsiveslides.min.js' %}"></script>
 <script src="{% static 'pharmacognosy/layout/scripts/jquery-mobilemenu.min.js' %}"></script>
-<script src="{% static 'pharmacognosy/layout/scripts/custom.js' %}"></script>
+<script>$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});</script> 
+
 
 {% endblock %}

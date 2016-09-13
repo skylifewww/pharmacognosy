@@ -13,7 +13,7 @@ from django.template import loader, Context, RequestContext
 
 # Create your views here.
 articles_of_course = {} 
-current_category = 0 
+# current_category = 0 
 
 
 def return_path_f(request):
@@ -23,43 +23,6 @@ def return_path_f(request):
         request.session['return_path'] = request.META.get('HTTP_REFERER', '/')
     else:
         request.session['return_path'] = request.META.get('HTTP_REFERER', '/')
-
-
-# def callactions(request):
-
-#     return_path_f(request)
-    
-#     args = {}
-#     # args['username'] = auth.get_user(request).username     
-
-#     return render_to_response("callactions.html", args)   
-
-# def video_only(request):
-
-#     return_path_f(request)
-
-#     args = {}
-#     args['tags'] = Tag.objects.all()
-#     args['articles'] = Article.objects.filter(video_only=1)
-#     # args['username'] = auth.get_user(request).username     
-#     args["categories"] = Category.objects.all()  
-#     args["authors"] = Author.objects.all()     
-
-#     return render_to_response("articles.html", args)
-
-
-# def written_only(request):
-
-#     return_path_f(request)
-
-#     args = {}
-#     args['tags'] = Tag.objects.all()
-#     args['articles'] = Article.objects.filter(written_only=1)
-#     # args['username'] = auth.get_user(request).username     
-#     args["categories"] = Category.objects.all()  
-#     args["authors"] = Author.objects.all()     
-
-#     return render_to_response("articles.html", args)
 
 
 def articles(request):
@@ -79,6 +42,8 @@ def articles(request):
 def article(request, category_id, article_id=1):
 
     global current_category
+
+    article_id = int(article_id)
 
     global articles_of_course 
 
@@ -110,7 +75,7 @@ def article(request, category_id, article_id=1):
     args["len_dict"] = len_dict
     args["article_number"] = article_number
     args["article"] = article
-    args["current_author"] = Author.objects.filter(id=article_id)
+    # args["current_author"] = Author.objects.filter(id=article_id)
     args['current_category'] = current_category
     args['tags'] = Tag.objects.all()
     # args["comments"] = all_comments
@@ -122,7 +87,7 @@ def article(request, category_id, article_id=1):
     return render_to_response("article.html", args, context_instance=RequestContext(request))
 
 
-def article_left_right(request, art_page_number, left_right):
+def article_left_right(request, category_id, art_page_number, left_right):
 
     global articles_of_course
 
@@ -138,7 +103,7 @@ def article_left_right(request, art_page_number, left_right):
     
     article = articles_of_course[article_number]
     article_id = article.id
-    current_category = Category.objects.filter(id=article_id)
+    current_category = Category.objects.get(id=category_id)
     # all_comments = Comments.objects.filter(comments_article_id=article_id)
    
     args = {}
@@ -149,7 +114,7 @@ def article_left_right(request, art_page_number, left_right):
     args["article_number"] = article_number
     args["article"] = article
     args["len_dict"] = len(articles_of_course)
-    args["current_author"] = Author.objects.filter(id=article_id)
+    # args["current_author"] = Author.objects.filter(id=article_id)
     args['current_category'] = current_category
     args['tags'] = Tag.objects.all()
     # args["comments"] = all_comments
@@ -219,7 +184,46 @@ def tags(request, tag_id=1):
     args['articles'] = Article.objects.filter(article_tag__tag_name__exact=current_tag)
     # args['username'] = auth.get_user(request).username
 
-    return render_to_response('articles.html', args, context_instance=RequestContext(request))       
+    return render_to_response('articles.html', args, context_instance=RequestContext(request))   
+
+
+
+# def callactions(request):
+
+#     return_path_f(request)
+    
+#     args = {}
+#     # args['username'] = auth.get_user(request).username     
+
+#     return render_to_response("callactions.html", args)   
+
+# def video_only(request):
+
+#     return_path_f(request)
+
+#     args = {}
+#     args['tags'] = Tag.objects.all()
+#     args['articles'] = Article.objects.filter(video_only=1)
+#     # args['username'] = auth.get_user(request).username     
+#     args["categories"] = Category.objects.all()  
+#     args["authors"] = Author.objects.all()     
+
+#     return render_to_response("articles.html", args)
+
+
+# def written_only(request):
+
+#     return_path_f(request)
+
+#     args = {}
+#     args['tags'] = Tag.objects.all()
+#     args['articles'] = Article.objects.filter(written_only=1)
+#     # args['username'] = auth.get_user(request).username     
+#     args["categories"] = Category.objects.all()  
+#     args["authors"] = Author.objects.all()     
+
+#     return render_to_response("articles.html", args)
+
 
 # def catalog(request):
 
