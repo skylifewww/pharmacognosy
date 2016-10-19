@@ -44,12 +44,16 @@ a{outline:none; text-decoration:none;}
 
 
 
-img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+img{width:auto; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+/*img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}*/
 .imgl{margin:0 15px 10px 0; clear:left;}
 .imgr{margin:0 0 10px 15px; clear:right;}
 .imgMU{width:auto; height:200px;}
 .imgAutorSmall{width:40px; height:auto; border-radius: 30px;}
 .imgAutorBig{width:120px; height:auto; border-radius: 100px;}
+
+.imgArticle{width:320px; height:auto; opacity: 1;}
+.imgArticle:hover{width:320px; height:auto; opacity: 0.8;}
 
 .imgSocialSmall{width:35px; height:auto; opacity: 0.5;}
 .imgSocialSmall:hover{width:35px; height:auto; opacity: 1;}

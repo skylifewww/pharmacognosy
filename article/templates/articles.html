@@ -44,6 +44,8 @@
 
     {% for article in articles %}
 
+    <div class="content two_quarter"> 
+
       <!-- ################################################################################################ -->
 <h8>Курс лекцій: <a href="/articles/category/get/{{ article.article_category.id }}/">{{ article.article_category }}</a></h8>
 
@@ -60,6 +62,38 @@
       
       {# <h6></h6> #}
       {# <img class="imgGroundArt" src="{% static 'pharmacognosy/images/camomile.png' %}" alt=""> #}
+
+</div>
+
+<div class="content one_quarter second">   
+
+{% if article.video_published %}
+    
+            {% video article.article_video '320x260' %}
+{% else %} 
+
+    {% if article.slug %}
+
+        {% if current_category or current_author or current_tag %}
+
+            <a href="/articles/article/get/{{ article.article_category.id }}/{{ article.id }}/"><img class="imgArticle" src="{{ article.slug }}"></a>
+
+        {% else %} 
+
+            <a href="/articles/article/get/{{ article.article_category.id }}/{{ article.id }}/"><img class="imgArticle" src="{{ article.slug }}"></a>
+            {# <img src="{{MEDIA_URL}}{{ article.image.url}}" width="220px" height="160px"> #}
+
+        {% endif %}    
+            
+    {% else %}    
+
+            <img class="imgArticle" src="{% static 'pharmacognosy/images/pharm.png' %}">    
+
+    {% endif %}
+    
+{% endif %}
+
+</div>        
       
       <h6></h6>
 <div class="clear"></div>  

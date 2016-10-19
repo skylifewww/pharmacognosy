@@ -1,6 +1,6 @@
-ADMINS = (
-    ('Admin', 'admin@pharmacognosy.com'),
-)
+# ADMINS = (
+#     ('Admin', 'admin@pharmacognosy.com'),
+# )
 
 # DEFAULT_FROM_EMAIL = 'robot@tvoy_style.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

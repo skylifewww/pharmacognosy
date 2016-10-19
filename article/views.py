@@ -29,6 +29,8 @@ def articles(request):
 
     return_path_f(request)
 
+    # args.update(csrf(request))
+
     args = {}
     args['tags'] = Tag.objects.all()
     args['articles'] = Article.objects.all()
