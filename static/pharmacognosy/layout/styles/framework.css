@@ -52,8 +52,8 @@ img{width:auto; height:auto; margin:0; padding:0; border:none; line-height:norma
 .imgAutorSmall{width:40px; height:auto; border-radius: 30px;}
 .imgAutorBig{width:120px; height:auto; border-radius: 100px;}
 
-.imgArticle{width:320px; height:auto; opacity: 1;}
-.imgArticle:hover{width:320px; height:auto; opacity: 0.8;}
+.imgArticle{width:220px; height:auto; opacity: 1;}
+.imgArticle:hover{width:220px; height:auto; opacity: 0.8;}
 
 .imgSocialSmall{width:35px; height:auto; opacity: 0.5;}
 .imgSocialSmall:hover{width:35px; height:auto; opacity: 1;}

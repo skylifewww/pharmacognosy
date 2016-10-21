@@ -154,7 +154,7 @@
 <div class="column-one">
 
            {% if article_number > 1 %}
-        <a href="/articles/article/page/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one"></div></a>
+        <a href="/articles/article/page/{{ article.article_category.id }}/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one"></div></a>
             {% else %}
          <h10></h10>
              {% endif %}
@@ -165,12 +165,12 @@
 <div class="column-two">
 
           {% if article_number < len_dict %}
-      <a href="/articles/article/page/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two"></div></a>
+      <a href="/articles/article/page/{{ article.article_category.id }}/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two"></div></a>
             {% else %}
        <h10></h10>
              {% endif %}
     
-</div> 
+</div>    
     
  <div class="clear"></div>   
  <p></p>
@@ -215,7 +215,7 @@ var disqus_config = function () {
 <div class="column-one">
 
            {% if article_number > 1 %}
-        <a href="/articles/article/page/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one"></div></a>
+        <a href="/articles/article/page/{{ article.article_category.id }}/{{ article_number }}/{{ 0 }}/" title="Назад"><div class="circle-one"></div></a>
             {% else %}
          <h10></h10>
              {% endif %}
@@ -226,12 +226,12 @@ var disqus_config = function () {
 <div class="column-two">
 
           {% if article_number < len_dict %}
-      <a href="/articles/article/page/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two"></div></a>
+      <a href="/articles/article/page/{{ article.article_category.id }}/{{ article_number }}/{{ 1 }}/" title="Вперед"><div class="circle-two"></div></a>
             {% else %}
        <h10></h10>
              {% endif %}
     
-</div>      
+</div>        
  <div class="clear"></div>    
 
 <a href="http://www.facebook.com/sharer/sharer.php?u=http://pharmacognosy.herokuapp.com{{ request.get_full_path|urlencode }}" target="_blank" title="Facebook"><img class="imgSocialSmall" src="{% static 'pharmacognosy/images/icons/facebook_butt.png' %}" width="35px" height="35px"></a>
