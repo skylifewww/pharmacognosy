@@ -11,7 +11,7 @@ DEBUG = False
 DOMAIN = 'localhost:8000'
 
 APPEND_SLASH = True
-ALLOWED_HOSTS = ["pharmacognosy.herokuapp.co", DOMAIN]
+ALLOWED_HOSTS = ["pharmacognosy.herokuapp.com", DOMAIN]
 
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
