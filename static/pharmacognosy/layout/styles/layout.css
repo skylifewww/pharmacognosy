@@ -35,18 +35,18 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:150px 0 100px;}
+#pageintro{padding:90px 0 100px;}
 
 #pageintro article{text-align:center;}
 #pageintro article p{font-size:16px;}
 #pageintro article .heading{font-size:32px; text-transform:uppercase;}
-#pageintro article footer{margin-top:150px;}
+#pageintro article footer{margin-top:110px;}
 
 
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:40px 0;}
+.container{padding:20px 0;}
 
 /* Content */
 .container .content{}
